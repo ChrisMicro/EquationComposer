@@ -1,0 +1,23 @@
+{
+    "name": "Equation Composer",
+    "description": "Synthesizer Library",
+    "keywords": "ESP8266, ESP32, Synth, Synthesizer",
+    "authors": [
+        {
+            "name": "Microbe Modular",
+            "email": "not@yet.de",
+            "url": "",
+            "maintainer": true
+        }
+    ],
+    "repository": {
+        "type": "git",
+         "url": ""
+    },
+    "version": "0.0.1",
+    "homepage": "",
+    "frameworks": "Arduino",
+    "examples": [
+        "examples/*/*.ino"
+    ]
+}
