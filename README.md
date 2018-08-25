@@ -1,7 +1,7 @@
 # Equation Composer
 Arduino Synthesizer Library for 32 bit microcontrollers
 
-This library is based on the EQUATION composer of [Microbe Modular how to](src="/doc/HowTo.md").
+This library is based on the EQUATION composer of [Microbe Modular how to](/doc/HowTo.md).
 
 To create various synthesizers you can use the graphical user interface espnode86
 
