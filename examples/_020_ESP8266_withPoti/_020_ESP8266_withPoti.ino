@@ -46,8 +46,6 @@ void setup()
   delay(1);
   system_update_cpu_freq(160); // run MCU core with full speed
 
-  Serial.begin(115200);
-
   i2s_begin();
   i2s_set_rate(SAMPLINGFREQUENCY);
 
@@ -86,8 +84,6 @@ void slowLoop()
   if(count==2)  mysynth.param[2].setValue(value);
   if(count==3)  mysynth.param[3].setValue(value);
 
-  //mysynth.param[1].setValue((value&3) << 8);
-  Serial.println(value);
   selectMultiplexer(count);
   count++;
   if(count>3) count=0;
