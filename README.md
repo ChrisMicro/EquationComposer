@@ -18,9 +18,9 @@ ESP6266,STM32 ( BlackF407 with STM32Generic Framework )
 [ ESP8266 Framework Installation ](http://esp8266.github.io/Arduino/versions/2.0.0/doc/installing.html)
 
 
-# The workflow for the graphical synth is like follows:
+## The workflow for the graphical synth is like follows:
 
-1. use the GUI and create a sketch
+1. use the [GUI](https://esptiny86.github.io/espnode86/) and create a sketch
 
 2. press CTRL-L .The text editor opens with the c-code in it
 
@@ -31,7 +31,7 @@ ESP6266,STM32 ( BlackF407 with STM32Generic Framework )
 Use graphical node creator from Budi Prakosa to create synth patches:
 https://esptiny86.github.io/espnode86/
 
-# Credits
+## Credits
 
 * MicrobeModular Equation Composer - https://github.com/clone45/EquationComposer
 * https://github.com/esptiny86/espsynth86
