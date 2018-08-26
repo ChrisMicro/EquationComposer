@@ -19,3 +19,6 @@
 #include "ModuleReverb.h"
 #include "ModuleEuclideanSeq.h"
 #include "ModuleSamplePlayer.h"
+#include "ModuleComparator.h"
+#include "ModuleRungler.h"
+
