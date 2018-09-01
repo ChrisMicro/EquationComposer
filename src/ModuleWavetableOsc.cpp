@@ -54,9 +54,10 @@ uint16_t ModuleWavetableOsc::compute()
    }
    else if(wavetable == 3)
    {
-       //sine low
-       //always start from zero or trouble!!
-       return (( (pgm_read_word_near(sine + wavetable_index)^0x8000) - 0x8000)>> 1 ) + 0x8000;
+       //tri
+       uint32_t phase=((((wavetable_index&0b11111111)<<8)+0x8000)^0x8000);
+       if(phase>0x8000) (phase=0xFFFF-phase)+0x8000;
+       return phase*2; 
    }
 
 }
