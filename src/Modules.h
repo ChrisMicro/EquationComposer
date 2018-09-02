@@ -21,4 +21,6 @@
 #include "ModuleSamplePlayer.h"
 #include "ModuleComparator.h"
 #include "ModuleRungler.h"
+#include "ModuleFeedbackNext.h"
+#include "ModuleFeedbackLast.h"
 

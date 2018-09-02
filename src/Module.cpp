@@ -1,6 +1,11 @@
 #include "Arduino.h"
 #include "defines.h"
 #include "Module.h"
+int32_t Module::globvar[10]={0};
+void Module::setOutput(uint16_t var)
+{
+output=var;
+}
 
 Module::Module()
 {

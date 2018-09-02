@@ -2,7 +2,7 @@
 #define Module_h
 
 #include "Arduino.h"
-//#include <pgmspace.h>
+#include <pgmspace.h>
 
 enum ModuleOutputBit {
     OUTPUT_8BIT,
@@ -40,6 +40,7 @@ class Module
     uint16_t readInput12Bit(Module *module, uint32_t map_low, uint32_t map_high);
     uint16_t readInput16Bit(Module *module, uint32_t map_low, uint32_t map_high);
 
+
     // compute()
     //
     // Compute the output of the module. Pure virtual function.  This is the
@@ -48,7 +49,10 @@ class Module
 
     virtual uint16_t compute() = 0;
 
+    void setOutput(uint16_t var);
+
     // Variables
+    static int32_t globvar[10];
     uint8_t cycle;                 // Current interrupt cycle
     uint16_t output;               // Instance variable to store the module's output
     boolean no_output_conversion;  // Set this to true in the derived class in order to skip any output scaling

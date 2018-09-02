@@ -1,7 +1,7 @@
 /*
   synthesizer with potis
 
-  Due to the fact that the ESP8266 has only one ADC a external 
+  Due to the fact that the ESP8266 has only one ADC a external
   multiplexer ( CD4051 ) is used to get more ADC channels.
   The multiplexer selection channels are connected to the ESP-Pins.
   Pinout see definitions below in the code.
@@ -9,7 +9,7 @@
   This sketch uses the Eqation composer files originally from
   Microbe modular
   http://www.microbemodular.com/products/equation-composer
-  
+
   ************************************************************************
   This sketch is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -46,6 +46,8 @@ void setup()
   delay(1);
   system_update_cpu_freq(160); // run MCU core with full speed
 
+  //Serial.begin(115200);
+
   i2s_begin();
   i2s_set_rate(SAMPLINGFREQUENCY);
 
@@ -76,17 +78,15 @@ void selectMultiplexer(uint8_t channel)
 
 void slowLoop()
 {
-  static uint16_t count=0;
+  static uint16_t count = 0;
   uint16_t value;
-  value=analogRead(A0);
-  if(count==0)  mysynth.param[0].setValue(value);
-  if(count==1)  mysynth.param[1].setValue(value);
-  if(count==2)  mysynth.param[2].setValue(value);
-  if(count==3)  mysynth.param[3].setValue(value);
+  value = analogRead(A0);
+
+  mysynth.param[count].setValue(value);
 
   selectMultiplexer(count);
   count++;
-  if(count>3) count=0;
+  if (count > 7) count = 0;
 }
 
 
@@ -97,19 +97,15 @@ void loop()
   uint16_t dacValue;
 
   dacValue = mysynth.run(cycle++);
+  //Serial.println(dacValue);delay(1);
   i2s_write_sample(dacValue - 0x8000);
 
   counter++;
 
-
-  if (counter > SAMPLINGFREQUENCY/250)
+  if (counter > SAMPLINGFREQUENCY / 250)
   {
     counter = 0;
     slowLoop();
   }
 
 }
-
-
-
-
