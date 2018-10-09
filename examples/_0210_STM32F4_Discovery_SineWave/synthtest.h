@@ -1,0 +1,48 @@
+/*
+
+This is espnode86 stuff do not edit
+
+--BEGINESPNODEPATCH--
+djIuMS4xCm5ldHdvcmsvYWRkLXBhdGNoIHNhZDQgcm9vdApwYXRjaC9vcGVuIHNhZDQKcGF0Y2gvYWRkLW5vZGUgc2FkNCAzYXJ2IGVzcG5vZGUvbm9kZWxpc3QgTm9kZSUyMFBhbGxldGUKbm9kZS90dXJuLW9uIDNhcnYKcGF0Y2gvYWRkLW5vZGUgc2FkNCBwaGps
+IGVzcG5vZGUvZGFjIEF1ZGlvJTIwREFDCm5vZGUvdHVybi1vbiBwaGpsCm5vZGUvYWRkLWlubGV0IHBoamwgbnNrZyBlc3Bub2RlL3N0cmluZyBhdWRpb19pbnB1dCBhdWRpb19pbnB1dApwYXRjaC9hZGQtbm9kZSBzYWQ0IGNzZDUgZXNwbm9kZS9vc2NpbGxhdG9y
+IE9zY2lsbGF0b3IKbm9kZS90dXJuLW9uIGNzZDUKbm9kZS9hZGQtaW5sZXQgY3NkNSBnOTBjIGVzcG5vZGUvc3RyaW5nIGZyZXF1ZW5jeV9pbnB1dCBmcmVxdWVuY3lfaW5wdXQKbm9kZS9hZGQtaW5sZXQgY3NkNSBpejY0IGVzcG5vZGUvc3RyaW5nIHdhdmV0YWJs
+ZV9pbnB1dCB3YXZldGFibGVfaW5wdXQKbm9kZS9hZGQtb3V0bGV0IGNzZDUgd2g4ciBlc3Bub2RlL3N0cmluZyBPdXQgT3V0CnBhdGNoL2FkZC1ub2RlIHNhZDQgamoybyBlc3Bub2RlL211bHRpcGxleGVyIE11bHRpcGxleGVyCm5vZGUvdHVybi1vbiBqajJvCm5v
+ZGUvYWRkLW91dGxldCBqajJvIHVpaXYgZXNwbm9kZS9zdHJpbmcgUG90MSBQb3QxCm5vZGUvYWRkLW91dGxldCBqajJvIGFhenYgZXNwbm9kZS9zdHJpbmcgUG90MiBQb3QyCm5vZGUvYWRkLW91dGxldCBqajJvIG5oemMgZXNwbm9kZS9zdHJpbmcgUG90MyBQb3Qz
+Cm5vZGUvYWRkLW91dGxldCBqajJvIGkxNW4gZXNwbm9kZS9zdHJpbmcgUG90NCBQb3Q0Cm5vZGUvYWRkLW91dGxldCBqajJvIHE2N3MgZXNwbm9kZS9zdHJpbmcgUG90NSBQb3Q1Cm5vZGUvYWRkLW91dGxldCBqajJvIGtvMWUgZXNwbm9kZS9zdHJpbmcgUG90NiBQ
+b3Q2Cm5vZGUvYWRkLW91dGxldCBqajJvIGRhbGwgZXNwbm9kZS9zdHJpbmcgUG90NyBQb3Q3Cm5vZGUvYWRkLW91dGxldCBqajJvIHVkaDggZXNwbm9kZS9zdHJpbmcgUG90OCBQb3Q4Cm5vZGUvbW92ZSAzYXJ2IDMwIDIwCm5vZGUvbW92ZSBwaGpsIDk2NSAyODAK
+bm9kZS9tb3ZlIGNzZDUgNjQ1IDI3Nwpub2RlL21vdmUgamoybyA0NDQgMzA0Cm91dGxldC9jb25uZWN0IHdoOHIgbnNrZyAxdjNzCm91dGxldC9jb25uZWN0IHVpaXYgZzkwYyA2ZW1kCm91dGxldC9jb25uZWN0IGFhenYgaXo2NCBjcXNjCm5vZGUvdXBkYXRlLWlu
+bGV0IHBoamwgbnNrZyBhdWRpb19pbnB1dCAwCm5vZGUvdXBkYXRlLWlubGV0IGNzZDUgZzkwYyBmcmVxdWVuY3lfaW5wdXQgMApub2RlL3VwZGF0ZS1pbmxldCBjc2Q1IGl6NjQgd2F2ZXRhYmxlX2lucHV0IDA=
+--ENDESPNODEPATCH--
+
+*/
+
+
+#ifndef SYNTHTEST_H
+#define SYNTHTEST_H
+#include "Synth.h"
+#include "Modules.h"
+
+
+class SynthTest : public Synth
+{
+    public:
+    ModuleConstant param[8];
+
+    SynthTest()
+    {
+
+        //Define Node Objects
+    ModuleWavetableOsc *moduleWavetableOsc_1 = new ModuleWavetableOsc();
+
+    moduleWavetableOsc_1->frequency_input= &param[0];
+    moduleWavetableOsc_1->wavetable_input= &param[1];
+
+
+    this->last_module = moduleWavetableOsc_1;
+
+    }
+};
+#endif // SYNTHTEST_H
+
+
+// end of espnode86 generated code //
