@@ -16,7 +16,7 @@
 */
 
 #include <Arduino.h>
-#include "ESP8266WiFi.h"
+//#include "ESP8266WiFi.h"
 #include <i2s.h>
 #include <i2s_reg.h>
 
@@ -27,9 +27,9 @@
 
 void setup()
 {
-  WiFi.forceSleepBegin(); // turn of wifi to reduce power consumption             
-  delay(1);     
-  system_update_cpu_freq(160); // run MCU core with full speed
+  //WiFi.forceSleepBegin(); // turn of wifi to reduce power consumption             
+  //delay(1);     
+  //system_update_cpu_freq(160); // run MCU core with full speed
 
   i2s_begin();
   i2s_set_rate(SAMPLINGFREQUENCY);
@@ -60,6 +60,3 @@ void loop()
   }
   
 }
-
-
-
